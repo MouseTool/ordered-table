@@ -56,6 +56,12 @@ do
         end
         return next_key, tbl._items[next_key]
     end
+
+    --- @generic T: table, K, V
+    --- @param tbl T
+    --- @return fun(table: table<K, V>, index: K):K, V
+    --- @return T
+    --- @return nil
     local odtPairs = function(tbl)
         if not (tbl and tbl._keys) then
             error("Exepected table of type OrderedTable, got " .. type(tbl))
@@ -165,6 +171,9 @@ do
 
     OrderedTable.pairs = odtPairs
 
+    --- @generic T: table, K
+    --- @param tbl T
+    --- @return K[]
     OrderedTable.keys = function(tbl)
         if not (tbl and tbl._keys) then
             error("Expected table of type OrderedTable, got " .. type(tbl))
@@ -181,6 +190,11 @@ do
         return keys
     end
 
+    --- @generic T: table, K, V
+    --- @param tbl T
+    --- @return fun(table: table<K, V>, index: K):K
+    --- @return T
+    --- @return nil
     OrderedTable.iterkeys = function(tbl)
         if not (tbl and tbl._keys) then
             error("Expected table of type OrderedTable, got " .. type(tbl))
@@ -189,6 +203,11 @@ do
         return nextOdtKey, tbl, nil
     end
 
+    --- @generic T: table, K, V
+    --- @param tbl T
+    --- @return fun(table: table<K, V>, index: K):K, V
+    --- @return T
+    --- @return nil
     OrderedTable.revpairs = function(tbl)
         if not (tbl and tbl._keys) then
             error("Expected table of type OrderedTable, got " .. type(tbl))
@@ -197,9 +216,11 @@ do
         return prevOdtPairs, tbl, nil
     end
 
-    --- @param tbl OrderedTable
-    --- @return function
-    --- @return table
+    --- @generic T: table, K, V
+    --- @param tbl T
+    --- @return fun(table: table<K, V>, index: K):K
+    --- @return T
+    --- @return nil
     OrderedTable.reviterkeys = function(tbl)
         if not (tbl and tbl._keys) then
             error("Expected table of type OrderedTable, got " .. type(tbl))
@@ -208,9 +229,9 @@ do
         return prevOdtKey, tbl, nil
     end
 
-    --- @return OrderedTable
+    --- @generic T : OrderedTable
+    --- @return T
     OrderedTable.new = function()
-        --- @type OrderedTable
         local tbl = {}
         tbl._items = {}
         tbl._keys = { _front = nil, _back = nil, length = 0 }
