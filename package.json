@@ -1,0 +1,14 @@
+{
+  "name": "skeleton-lib",
+  "version": "0.1.0",
+  "description": "Skeleton-lib",
+  "main": "dummy.js",
+  "onelua": {
+    "main": "init.lua"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@mousetool/tfm-vscode": "^1.0.1"
+  }
+}
