@@ -1,12 +1,12 @@
 {
-  "name": "skeleton-lib",
-  "version": "0.1.0",
-  "description": "Skeleton-lib",
+  "name": "@mousetool/ordered-table",
+  "version": "1.0.0",
+  "description": "Ordered table (dictionary) implementation",
   "main": "dummy.js",
   "onelua": {
     "main": "init.lua"
   },
-  "author": "",
+  "author": "Cassolette",
   "license": "MIT",
   "devDependencies": {
     "@mousetool/tfm-vscode": "^1.0.1"
